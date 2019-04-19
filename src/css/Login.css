@@ -1,0 +1,22 @@
+.login {
+    text-align: center;
+}
+
+.login-title{
+    font-size: 25px;
+    border: 2px solid #c6c6c6;
+    padding: 5px;   
+}
+.login-img{
+    border: 2px solid #c6c6c6;
+    border-top: none;
+}
+.login-msg{
+    border: 2px solid #c6c6c6;
+    border-top: none;
+    font-size: 20px;
+    padding: 5px;
+}
+.dropdown-button {
+    width: 100%;
+  }

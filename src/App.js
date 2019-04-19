@@ -1,28 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Login from './Login';
+import {connect} from 'react-redux';
+import "bootstrap/dist/css/bootstrap.css";
 
+import Header from './Header';
 class App extends Component {
+  componentDidMount() {
+    let data = [{id:1,name:"abcd"},{id:2,name:"amul"},{id:3,name:"chandra"},{id:2,name:"vikash"},{id:3,name:"gupta"}];
+    let data1 = [{id:1,name:"abcd"},{id:2,name:"amul,vikash"},{id:3,name:"chandra,gupta"}];
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <BrowserRouter>
+        <Route path="/" render={() => {
+          
+          return (
+            !this.props.auth ? <Login /> : 
+            <Switch>
+              <Route path="/" render={() => {
+                return(
+                  <Header />
+                )
+              }} ></Route>
+            </Switch>
+          )
+        }} />
+      </BrowserRouter>
     );
   }
 }
-
-export default App;
+const mapStatetoProps = (state) => {
+  return {
+    auth: state.auth.authStatus
+  }
+}
+export default connect(mapStatetoProps)(App);
