@@ -48,8 +48,8 @@ import { setAuth, setAuthData } from './store/actions/auth.action';
                 <DropdownMenu className="dropdown-button">
                 {Object.values(this.state.users).map((user, i) => {
                   return (
-                    <React.Fragment>
-                    <DropdownItem onClick={() =>{this.login(user)}}>{user.name}{i < Object.keys(this.state.users).length}</DropdownItem>
+                    <React.Fragment key={i}>
+                    <DropdownItem onClick={() =>{this.login(user)}} ><span>{user.name}{i < Object.keys(this.state.users).length}</span></DropdownItem>
                     {i < Object.keys(this.state.users).length - 1 ? <DropdownItem divider /> : ''}
                     </React.Fragment>
                   )

@@ -148,6 +148,7 @@ let users = {
   }
   
   export function _saveQuestion (question) {
+    console.log('fn save ');
     return new Promise((res, rej) => {
       const authedUser = question.author;
       const formattedQuestion = formatQuestion(question);

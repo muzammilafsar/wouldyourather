@@ -1,8 +1,9 @@
-import { SET_AUTH, SET_AUTH_DATA } from "../actions/auth.action";
+import { SET_AUTH, SET_AUTH_DATA, SAVE_USERS } from "../actions/auth.action";
 
 const initialState = {
     authStatus: false,
-    authData: {}
+    authData: {},
+    users: {}
 }
 export default function authReducer(state = initialState, action) {
     switch (action.type) {
@@ -15,6 +16,12 @@ export default function authReducer(state = initialState, action) {
             return {
                 ...state,
                 authData: action.payload
+            }
+        case SAVE_USERS:
+            return {
+                ...state,
+                users: action.payload,
+                authData: action.payload[state.authData.id]
             }
         default:
             return state;
