@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { _getUsers, _getQuestions } from './_DATA';
 import {
-    Card, CardImg, CardText, CardBody, CardLink,
+    Card,  CardText, CardBody, 
     CardTitle, CardSubtitle
 } from 'reactstrap';
 const LeaderBoard = () => {
@@ -21,7 +21,7 @@ const LeaderBoard = () => {
     return (
         <div className="row">
             {
-                users.map(val => {
+                users.map((val, i) => {
                     return (
         <div className="col-md-3 col-sm-12">
                         <Card>
@@ -29,7 +29,7 @@ const LeaderBoard = () => {
                                 <CardTitle>{val.name}</CardTitle>
                                 <CardSubtitle>Total Points :  {Object.keys(val.answers).length + val.questions.length}</CardSubtitle>
                             </CardBody>
-                            <img width="100%" src={val.avatarURL} alt="Card image cap" />
+                            <img width="100%" src={val.avatarURL} alt={"Card image cap"+ i} />
                             <CardBody>
                                 <CardText><div>Answered Questions: {Object.keys(val.answers).length}</div>
                                 <div>Created Questions: {val.questions.length}</div></CardText>

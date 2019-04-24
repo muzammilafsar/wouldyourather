@@ -1,7 +1,7 @@
 import React from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
-import { _getQuestions, _getUsers } from './_DATA';
+// import { _getQuestions, _getUsers } from './_DATA';
 import { connect } from 'react-redux';
 import VoteCard from './common/VoteCard';
 import { getQuestions } from './store/actions/question.action';
@@ -32,9 +32,9 @@ class Home extends React.Component {
                 activeTab: tab
             });
         }
-        _getUsers().then(val =>{
-            console.log(val[this.props.authData.id].answers);
-        })
+        // _getUsers().then(val =>{
+        //     console.log(val[this.props.authData.id].answers);
+        // })
     }
 shouldComponentUpdate(next) {
     return true;

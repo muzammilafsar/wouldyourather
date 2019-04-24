@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 import {Card, Button} from 'reactstrap';
 import { saveQuestion } from './store/actions/question.action';
 import {connect} from 'react-redux';

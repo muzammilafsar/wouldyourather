@@ -14,8 +14,8 @@ class App extends Component {
     this.props.history.push("/");
   }
   componentDidMount() {
-    let data = [{id:1,name:"abcd"},{id:2,name:"amul"},{id:3,name:"chandra"},{id:2,name:"vikash"},{id:3,name:"gupta"}];
-    let data1 = [{id:1,name:"abcd"},{id:2,name:"amul,vikash"},{id:3,name:"chandra,gupta"}];
+    // let data = [{id:1,name:"abcd"},{id:2,name:"amul"},{id:3,name:"chandra"},{id:2,name:"vikash"},{id:3,name:"gupta"}];
+    // let data1 = [{id:1,name:"abcd"},{id:2,name:"amul,vikash"},{id:3,name:"chandra,gupta"}];
   }
   render() {
     return (
