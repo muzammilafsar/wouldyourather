@@ -24,8 +24,11 @@ const Header = (props) => {
                 <NavbarToggler onClick={setToggle} />
                 <Collapse isOpen={toggle} navbar>
                     <Nav className="ml-auto" navbar>
+                    <NavItem>
+                        <Link className="nav-link" to="/">Home</Link>
+                        </NavItem>
                         <NavItem>
-                        <Link className="nav-link" to="/newquestion">New Question</Link>
+                        <Link className="nav-link" to="/add">New Question</Link>
                         </NavItem>
                         <NavItem>
 

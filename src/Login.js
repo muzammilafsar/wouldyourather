@@ -37,7 +37,7 @@ import { setAuth, setAuthData } from './store/actions/auth.action';
           <div className="login col-md-4 col-sm-12">
             <div className="login-title">Welcome to Would You Rather App</div>
             <div>
-              <div className="login-img"><img alt="image" style={{ width: '100%' }} src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPbAZaucd7UhbAi1ngthd8Ckn7zt3NSxYAWdgfWqFBAg76Hh1Q'} /></div>
+              <div className="login-img"><img alt={`Login_page`} style={{ width: '100%' }} src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPbAZaucd7UhbAi1ngthd8Ckn7zt3NSxYAWdgfWqFBAg76Hh1Q'} /></div>
               <div className="login-msg">LogIn As</div>
             </div>
             <div>

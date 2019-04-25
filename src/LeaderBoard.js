@@ -14,7 +14,7 @@ const LeaderBoard = () => {
             setUsers(Object.values(val));
         })
         _getQuestions().then(val => {
-            // questions = Object.values(val);
+            console.log(questions);
             setQuestions(Object.values(val));
         })
     }, {})
@@ -23,7 +23,7 @@ const LeaderBoard = () => {
             {
                 users.map((val, i) => {
                     return (
-        <div className="col-md-3 col-sm-12">
+        <div className="col-md-3 col-sm-12" key={i}>
                         <Card>
                             <CardBody>
                                 <CardTitle>{val.name}</CardTitle>
@@ -31,8 +31,8 @@ const LeaderBoard = () => {
                             </CardBody>
                             <img width="100%" src={val.avatarURL} alt={"Card image cap"+ i} />
                             <CardBody>
-                                <CardText><div>Answered Questions: {Object.keys(val.answers).length}</div>
-                                <div>Created Questions: {val.questions.length}</div></CardText>
+                                <CardText><span >Answered Questions: {Object.keys(val.answers).length}</span><br/>
+                                <span>Created Questions: {val.questions.length}</span></CardText>
                             </CardBody>
                         </Card>
         </div>

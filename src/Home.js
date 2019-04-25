@@ -46,6 +46,7 @@ shouldComponentUpdate(next) {
                 if (ques.id === val) {
                     found = true;
                 }
+                return val;
             });
             return found;
         });
@@ -56,6 +57,7 @@ shouldComponentUpdate(next) {
                 if (ques.id === val) {
                     found = false; 
                 }
+                return val;
             });
             return found;
         });
@@ -115,9 +117,9 @@ const mapStatetoProps = (state) => {
         users: state.auth.users
     }
 }
-const mapDispatchToprops = () => {
-    return {
-        getQuestions: getQuestions
-    }
-}
+// const mapDispatchToprops = () => {
+//     return {
+//         getQuestions: getQuestions
+//     }
+// }
 export default connect(mapStatetoProps, {getQuestions})(Home);

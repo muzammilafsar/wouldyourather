@@ -48,7 +48,7 @@ class VoteCard extends React.Component {
                     </div>
                 </div>
                 <Button onClick={() => { this.saveAnswer() }}>Take Vote</Button>
-                <Link to={`/poll/${this.props.question.id}`}><Button> View Poll</Button></Link>
+                <Link to={`/questions/${this.props.question.id}`}><Button> View Poll</Button></Link>
             </Card>
 
         );

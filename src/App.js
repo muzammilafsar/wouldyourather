@@ -9,9 +9,13 @@ import Home from './Home';
 import NewQuestion from './NewQuestion';
 import ViewPoll from './ViewPoll';
 import { withRouter } from 'react-router-dom';
+import { getQuestions } from './store/actions/question.action';
+import { getUsers } from './store/actions/auth.action';
 class App extends Component {
   componentWillMount() {
-    this.props.history.push("/");
+    // this.props.history.push("/");
+    this.props.getQuestions();
+    this.props.getUsers();
   }
   componentDidMount() {
     // let data = [{id:1,name:"abcd"},{id:2,name:"amul"},{id:3,name:"chandra"},{id:2,name:"vikash"},{id:3,name:"gupta"}];
@@ -40,12 +44,12 @@ class App extends Component {
                   )
                 }} ></Route>
                    
-                   <Route exact path="/newquestion" render={() => {
+                   <Route exact path="/add" render={() => {
                   return(
                     <NewQuestion />
                   )
                 }} ></Route>
-                 <Route exact path="/poll/:id" component={ViewPoll}></Route>
+                 <Route exact path="/questions/:id" component={ViewPoll}></Route>
               </Switch>
             
             </React.Fragment>
@@ -60,4 +64,4 @@ const mapStatetoProps = (state) => {
     auth: state.auth.authStatus
   }
 }
-export default connect(mapStatetoProps)(withRouter(App));
+export default connect(mapStatetoProps, {getQuestions, getUsers})(withRouter(App));
