@@ -50,7 +50,7 @@ shouldComponentUpdate(next) {
             });
             return found;
         });
-        let unanswered = Object.values(this.props.questions).filter(ques => {
+        let unanswered = Object.values(this.props.questions).reverse().filter(ques => {
             let found = true;
             Object.keys(this.props.authData.answers).map(val => {
                 console.log(ques.id , val);
